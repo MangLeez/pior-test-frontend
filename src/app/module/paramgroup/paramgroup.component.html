@@ -1,0 +1,35 @@
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="paramgroupId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.paramGroupId}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="paramGroup">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> paramGroup </th>
+        <td mat-cell *matCellDef="let element"> {{element.paramGroup}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="paramEnDescription">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> EnDescription </th>
+        <td mat-cell *matCellDef="let element"> {{element.paramEnDescription}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="paramLocalDescription">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> LocalDescription </th>
+        <td mat-cell *matCellDef="let element"> {{element.paramLocalDescription}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+        <td mat-cell *matCellDef="let element"> <button mat-raised-button color="warn">Delete</button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
